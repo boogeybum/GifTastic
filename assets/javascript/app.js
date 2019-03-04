@@ -31,6 +31,7 @@ $("button").on("click", function() {
     }).then(function(response) {
         var results = response.data;
 
+        // request data from giphy based on the button clicked and return random gif's that meet the requirements.
         for (var i = 0; i < results.length; i++) {
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
                 var gifDiv = $("<div>");
@@ -41,15 +42,18 @@ $("button").on("click", function() {
                 gifImage.attr("src", results[i].images.fixed_height.url);
                 gifDiv.append(gifImage);
                 gifDiv.append(p);
+
+                // prepend the returned gif's to add them to the page just below the buttons
                 $("#giftastic").prepend(gifDiv);
             }
         }
     });
 });
 
-// request data from giphy based on the button clicked and return random gif's that meet the requirements.
+// add data attributes for the still and motion versions of the gif defaulting to 'still'
+// add function that 'plays' the gif when the user clicks on the picture.
 
-// prepend the returned gif's to add them to the page just below the buttons
+
 
 // add buttons to topics array based on user input (need if else statement to prevent adding duplicate entries and empty buttons)
 $("#add-movie").on("click", function(event) {
