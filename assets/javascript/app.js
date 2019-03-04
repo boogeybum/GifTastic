@@ -1,12 +1,12 @@
-// declare variables
+// declare string variable to hold search terms
 var topics = ["Tommy Boy", "Holy Grail", "Caddyshack", "Happy Gilmore"];
 
-// update buttons on page from topics array
+// update click and search buttons on page from topics array
 function renderButtons() {
     // clear buttons on the page before appending new to prevent adding same button twice
     $("#btn-view").empty();
     
-    // run the array to add a button for each item in the array
+    // run the array to add a button and text for each item in the array
     for (var i = 0; i < topics.length; i++) {
         var newBtn = $("<button>");
         newBtn.addClass("btn btn-primary");
@@ -62,4 +62,4 @@ $("#add-movie").on("click", function(event) {
     $("#gifSearch-input").val("");
 });
 
-// renderButtons();
+renderButtons();
