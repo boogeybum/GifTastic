@@ -36,7 +36,7 @@ $(document).on("click","button", function() {
     console.log(movieGif);
     // link to giphy api
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    movieGif + "&api_key=TD2V1oeol0vQTK3C0op1DCFEbEknqsRW&limit=5";
+    movieGif + "&api_key=TD2V1oeol0vQTK3C0op1DCFEbEknqsRW&limit=10";
 
     $.ajax({
         url: queryURL,
@@ -52,7 +52,10 @@ $(document).on("click","button", function() {
                 var rating = results[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
                 var gifImage = $("<img>");
-                gifImage.attr("src", results[i].images.fixed_height.url);
+                gifImage.attr("src", results[i].images.fixed_width_still.url);
+                gifImage.attr("still", results[i].images.fixed_width_still.url);
+                gifImage.attr("moving", results[i].images.fixed_height.url);
+                gifImage.attr("id", "gif-img");
                 gifDiv.append(gifImage);
                 gifDiv.append(p);
 
@@ -66,3 +69,10 @@ $(document).on("click","button", function() {
 // add data attributes for the still and motion versions of the gif defaulting to 'still'
 // add function that 'plays' the gif when the user clicks on the picture.
 
+$(document).on("click", "#gif-img", function() {
+    if ($(this).attr("src") === $(this).attr("still")) {
+        $(this).attr("src", $(this).attr("moving"))
+    } else if ($(this).attr("src") === $(this).attr("moving")) {
+        $(this).attr("src", $(this).attr("still"))
+    }
+});
