@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 </head>
 <body>
     <div class="container">
@@ -45,68 +44,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script>
-        var topics = ["Tommy Boy", "Holy Grail", "Caddyshack", "Happy Gilmore"];
-
-        // update click and search buttons on page from topics array
-        function renderButtons() {
-        // clear buttons on the page before appending new to prevent adding same button twice
-            $("#btn-view").empty();
-    
-            // run the array to add a button and text for each item in the array
-            for (var i = 0; i < topics.length; i++) {
-                var newBtn = $("<button>");
-                newBtn.addClass("btn btn-primary");
-                newBtn.attr("data-movie", topics[i]);
-                newBtn.text(topics[i]);
-                $("#btn-view").append(newBtn);
-                // console.log(newBtn);
-            }
-        };
-
-        renderButtons();
-
-        $("button").on("click", function() {
-        var movieGif = $("button").attr("data-movie");
-        console.log(movieGif);
-        // link to giphy api
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        movieGif + "&api_key=TD2V1oeol0vQTK3C0op1DCFEbEknqsRW&limit=5";
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-            }).then(function(response) {
-                var results = response.data;
-
-                for (var i = 0; i < results.length; i++) {
-                    if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-                        var gifDiv = $("<div>");
-
-                        var rating = results[i].rating;
-                        var p = $("<p>").text("Rating: " + rating);
-                        var gifImage = $("<img>");
-                        gifImage.attr("src", results[i].images.fixed_height.url);
-                        gifDiv.append(gifImage);
-                        gifDiv.append(p);
-                        $("#giftastic").prepend(gifDiv);
-                    }
-                }
-            });
-        });
-
-        $("#add-movie").on("click", function(event) {
-            event.preventDefault();
-
-            var movie = $("#gifSearch-input").val().trim();
-            topics.push(movie);
-            renderButtons();
-            //clear the search field 
-            $("#gifSearch-input").val("");
-        });
-
-        
-    </script> -->
 
     <script src="assets/javascript/app.js"></script>
     
