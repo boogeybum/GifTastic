@@ -17,8 +17,21 @@ function renderButtons() {
     }
 };
 
+renderButtons();
+
+// add buttons to topics array based on user input (need if else statement to prevent adding duplicate entries and empty buttons)
+$("#add-movie").on("click", function(event) {
+    event.preventDefault();
+
+    var movie = $("#gifSearch-input").val().trim();
+    topics.push(movie);
+    renderButtons();
+    //clear the search field 
+    $("#gifSearch-input").val("");
+});
+
 // search for gif's based on button clicked
-$("button").on("click", function() {
+$(document).on("click","button", function() {
     var movieGif = $(this).attr("data-movie");
     console.log(movieGif);
     // link to giphy api
@@ -53,17 +66,3 @@ $("button").on("click", function() {
 // add data attributes for the still and motion versions of the gif defaulting to 'still'
 // add function that 'plays' the gif when the user clicks on the picture.
 
-
-
-// add buttons to topics array based on user input (need if else statement to prevent adding duplicate entries and empty buttons)
-$("#add-movie").on("click", function(event) {
-    event.preventDefault();
-
-    var movie = $("#gifSearch-input").val().trim();
-    topics.push(movie);
-    renderButtons();
-    //clear the search field 
-    $("#gifSearch-input").val("");
-});
-
-renderButtons();
