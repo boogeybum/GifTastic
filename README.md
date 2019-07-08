@@ -12,6 +12,8 @@ Utilizing the GiphyAPI click on buttons to display gif's of a given topic
 ## About
 * The GifTastic website allows the user to click on one of the predefined buttons, or the user can create their own by entering different movie names, to see up to 10 different gifs based on the movie title enterend  
 
+<img src="assets/images/Giftastic_Screenshot.JPG" >
+
 ## License 
 * No license explicite or implied.
 
